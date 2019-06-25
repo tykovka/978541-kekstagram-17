@@ -17,7 +17,7 @@ var picturesElement = document.querySelector('.pictures');
 var fragment = document.createDocumentFragment();
 
 function getRandomIntegerFromInterval(min, max) {
-  return Math.random() * (max - min + 1) + min;
+  return Math.round(Math.random() * (max - min + 1) + min);
 }
 
 function getRandomComment(quantity) {
@@ -37,8 +37,8 @@ function getRandomComment(quantity) {
 function cteateObjectPhoto(number) {
   var photo;
   photo = {
-    url: 'photos/' + (number + 1) + '.jpg',
-    likes: Math.trunc(getRandomIntegerFromInterval(15, 250)),
+    url: 'photos/' + (number) + '.jpg',
+    likes: getRandomIntegerFromInterval(15, 250),
     comments: getRandomComment(getRandomIntegerFromInterval(1, 5))
   };
   return photo;
@@ -53,7 +53,7 @@ function createPicturesDOM(image) {
   return picture;
 }
 
-for (var i = 0; i < objectsQuantity; i++) {
+for (var i = 1; i <= objectsQuantity; i++) {
   fragment.appendChild(createPicturesDOM(cteateObjectPhoto(i)));
 }
 
