@@ -30,7 +30,6 @@ function getRandomComment(quantity) {
     };
   }
 
-
   return comments;
 }
 
@@ -58,3 +57,9 @@ for (var i = 1; i <= objectsQuantity; i++) {
 }
 
 picturesElement.appendChild(fragment);
+
+var uploadInputFile = document.querySelector('#upload-file');
+var uploadOverlay = document.querySelector('.img-upload__overlay');
+uploadInputFile.addEventListener('change', function () {
+  uploadOverlay.classList.remove('hidden');
+});
