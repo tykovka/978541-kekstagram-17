@@ -109,9 +109,12 @@ function onPopupEscKeydown(evt) {
   }
 }
 
+
 function onPhotoCommentFocus() {
   document.removeEventListener('keydown', onPopupEscKeydown);
 }
+
+
 function onPhotoCommentBlur() {
   document.addEventListener('keydown', onPopupEscKeydown);
 }
